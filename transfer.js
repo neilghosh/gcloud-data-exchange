@@ -1,7 +1,7 @@
 var data = {};
 var YOUR_CLIENT_ID =
   "926249069764-7mtuteevhl79kjc9mnd4t9p4liae15s8.apps.googleusercontent.com";
-var YOUR_REDIRECT_URI = window.location.origin + "/static/transfer.html";
+var YOUR_REDIRECT_URI = window.location.origin + window.location.pathname;
 var fragmentString = location.hash.substring(1);
 
 // Parse query string to see if page request is coming from OAuth 2.0 server.
