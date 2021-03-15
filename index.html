@@ -1,30 +1,75 @@
 <html>
-  <head></head>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+
+    <style>
+      .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .button1 {
+        background-color: #000a01;
+      } /* Black */
+      .button2 {
+        background-color: #008cba;
+      } /* Blue */
+
+      .button:hover {
+        background-color: #ddd;
+        color: black;
+      }
+    </style>
+  </head>
   <body>
     <script src="transfer.js"></script>
-    <button onclick="loadProjects();">Sign In to List Projects</button>
-    <br>
+    <button class="button button2" type="button" onclick="loadProjects();">
+      Sign In to List Projects
+    </button>
+    <button class="button button1" onclick="revokeAccess();">Sign out</button>
+    <br />
     <label for="selectProject">Choose a project</label>
-    <select id="selectProject">
-    </select>
-    <br>
+    <select height="50" width="300" id="selectProject"></select>
+    <br />
+    <br />
     <label for="infile">Choose a file to import</label>
     <input type="file" id="infile" name="Input File " accept="text/csv" />
     <output id="infilerowcount"> In File Count will appear here </output>
-    <br>
+    <br />
     <button onclick="importFile();">Import the above selected file</button>
-    <output id="out"> Imported Count Will Appear below<br> </output>
-    <br>
-    <input type="text" id="symbol" value="SBIN"/>
-    <input type="date" id="fromDate" value="2018-01-01"/>
-    <input type="date" id="toDate" value="2018-01-10"/>
+    <output id="out"> Imported Count Will Appear below<br /> </output>
+    <br />
+    <hr>
+    <input type="text" id="symbol" value="SBIN" />
+    <input type="date" id="fromDate" value="2018-01-01" />
+    <input type="date" id="toDate" value="2018-01-10" />
     <button onclick="loadQuotes();">Read Quote</button>
-    <br>
-    <table id="priceOut" border="1">
+    <br />
+    <div style="width: 100%;">
+      <div
+        id="table_chart"
+        style="width: 500px; height: 500px;float: left;"
+      ></div>
+
+      <!-- <table id="priceOut" border="1">
       <th>symbol</th>
       <th>timestamp</th>
       <th>close</th>
-    </table>
-    
+    </table> -->
+    </div>
+    <div
+      id="curve_chart"
+      style="width: 900px; height: 500px; margin-left: 50%;"
+    ></div>
   </body>
 </html>
