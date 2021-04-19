@@ -83,7 +83,7 @@ function importFile() {
     "properties": { \
         "symbol": { "stringValue": "'+line.symbol+'" },\
         "timestamp": { "timestampValue": "'+line.timestamp+'T00:00:00Z" },\
-        "close": { "excludeFromIndexes": false, "doubleValue": '+line.CLOSE+' },\
+        "close": { "excludeFromIndexes": true, "doubleValue": '+line.CLOSE+' },\
         "open": { "doubleValue": '+line.open+' },\
         "high": { "doubleValue": '+line.high+' },\
         "low": { "doubleValue": '+line.low+' },\
