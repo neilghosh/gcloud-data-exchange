@@ -21,6 +21,7 @@ if (Object.keys(params).length > 0) {
 window.addEventListener(
   "DOMContentLoaded",
   function () {
+    initHtml();
     google.charts.load("current", { packages: ["corechart"] });
     google.charts.load("current", { packages: ["table"] });
 
@@ -385,4 +386,27 @@ function revokeAccess() {
   // Add form to page and submit it to actually revoke the token.
   document.body.appendChild(form);
   form.submit();
+}
+
+function dateToStr(date) {
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  return year + "-" + month + "-" + day;       
+}
+
+function initHtml() {
+  var date = new Date();
+
+  toDate = dateToStr(date);
+  offsetDays = 90;
+  date.setUTCDate(date.getUTCDate() - offsetDays)
+  fromDate = dateToStr(date);
+  
+  document.getElementById("toDate").value = toDate;
+  document.getElementById("fromDate").value = fromDate;
 }
