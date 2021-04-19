@@ -84,10 +84,10 @@ function importFile() {
         "symbol": { "stringValue": "'+line.symbol+'" },\
         "timestamp": { "timestampValue": "'+line.timestamp+'T00:00:00Z" },\
         "close": { "excludeFromIndexes": true, "doubleValue": '+line.CLOSE+' },\
-        "open": { "doubleValue": '+line.open+' },\
-        "high": { "doubleValue": '+line.high+' },\
-        "low": { "doubleValue": '+line.low+' },\
-        "volume": { "doubleValue": '+line.TOTTRDQTY+' }\
+        "open": { "excludeFromIndexes": true, "doubleValue": '+line.open+' },\
+        "high": { "excludeFromIndexes": true, "doubleValue": '+line.high+' },\
+        "low": { "excludeFromIndexes": true, "doubleValue": '+line.low+' },\
+        "volume": { "excludeFromIndexes": true, "doubleValue": '+line.TOTTRDQTY+' }\
       }}}';
     //console.log(str);
     obj = JSON.parse(str);
