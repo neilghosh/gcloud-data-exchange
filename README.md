@@ -6,8 +6,8 @@ python3 -m http.server
 ```
 
 ## Tools
-[Mucker](mucker/)
-[Quote](quote/)
+* [Mucker](mucker/) - General purpose tool to import CSV files to Google Cloud Datastore.
+* [Quote](quote/) - Upload stock data in csv form to Datastore and plot candlestick chart.
 
 
 ## Demonstration of 
