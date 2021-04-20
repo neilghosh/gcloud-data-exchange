@@ -9,6 +9,8 @@ python3 -m http.server
 * [Mucker](mucker/) - General purpose tool to import CSV files to Google Cloud Datastore.
 * [Quote](quote/) - Upload stock data in csv form to Datastore and plot candlestick chart.
 
+## Demo
+https://neilghosh.com/gcloud-data-exchange
 
 ## Demonstration of 
 * Google OAuth flow to grant permissions to google cloud resources (Cloud Platform Readonly and Datastore)
