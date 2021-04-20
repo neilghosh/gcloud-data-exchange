@@ -27,4 +27,4 @@ ORDER BY timestamp;
 * Upload CSV file to populate datastore 
 * Read datastore using dynamically formed GQL query
 
-![2021-03-15](screenshots/ss-2021-03-15.png)
+![2021-03-15](../screenshots/ss-2021-03-15.png)
