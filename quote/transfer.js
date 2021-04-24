@@ -242,8 +242,8 @@ function loadQuotes() {
 }
 
 function compare(a, b) {
-  var a = a.entity.properties.timestamp.timestampValue;
-  var b = b.entity.properties.timestamp.timestampValue;
+  var a = a.entity.properties.Timestamp.timestampValue;
+  var b = b.entity.properties.Timestamp.timestampValue;
 
   if (a.last_nom < b.last_nom) {
     return -1;
