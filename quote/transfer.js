@@ -82,13 +82,13 @@ function importFile() {
   for (var line of data) {
     var str = '{"upsert": {"key": { "path": [{"kind": "StockPrices", "name": "'+line.symbol+line.timestamp+'"}]},\
     "properties": { \
-        "symbol": { "stringValue": "'+line.symbol+'" },\
-        "timestamp": { "timestampValue": "'+line.timestamp+'T00:00:00Z" },\
-        "close": { "excludeFromIndexes": true, "doubleValue": '+line.CLOSE+' },\
-        "open": { "excludeFromIndexes": true, "doubleValue": '+line.open+' },\
-        "high": { "excludeFromIndexes": true, "doubleValue": '+line.high+' },\
-        "low": { "excludeFromIndexes": true, "doubleValue": '+line.low+' },\
-        "volume": { "excludeFromIndexes": true, "doubleValue": '+line.TOTTRDQTY+' }\
+        "Symbol": { "stringValue": "'+line.symbol+'" },\
+        "Timestamp": { "timestampValue": "'+line.timestamp+'T00:00:00Z" },\
+        "Close": { "excludeFromIndexes": true, "doubleValue": '+line.CLOSE+' },\
+        "Open": { "excludeFromIndexes": true, "doubleValue": '+line.open+' },\
+        "High": { "excludeFromIndexes": true, "doubleValue": '+line.high+' },\
+        "Low": { "excludeFromIndexes": true, "doubleValue": '+line.low+' },\
+        "Volume": { "excludeFromIndexes": true, "doubleValue": '+line.TOTTRDQTY+' }\
       }}}';
     //console.log(str);
     obj = JSON.parse(str);
@@ -257,16 +257,16 @@ function compare(a, b) {
 function extractChartData(entities) {
   entities.sort(compare);
   var chartData = [];
-  chartData.push(["timestamp", "low", "close", "open", "high"]);
+  chartData.push(["Timestamp", "Low", "Close", "Open", "High"]);
 
   for (i = 0; i < entities.length; i++) {
     var prop = entities[i].entity.properties;
     chartData.push([
-      prop.timestamp.timestampValue.substring(0, 10),
-      prop.low.doubleValue,
-      prop.close.doubleValue,
-      prop.open.doubleValue,
-      prop.high.doubleValue,
+      prop.Timestamp.timestampValue.substring(0, 10),
+      prop.Low.doubleValue,
+      prop.Close.doubleValue,
+      prop.Open.doubleValue,
+      prop.High.doubleValue,
     ]);
   }
   return chartData;
